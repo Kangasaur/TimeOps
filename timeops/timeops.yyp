@@ -1,5 +1,7 @@
 {
   "resources": [
+    {"id":{"name":"spr_timeop_future_idle","path":"sprites/spr_timeop_future_idle/spr_timeop_future_idle.yy",},"order":1,},
+    {"id":{"name":"spr_timeop_past_idle","path":"sprites/spr_timeop_past_idle/spr_timeop_past_idle.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
