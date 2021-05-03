@@ -1,5 +1,7 @@
 {
   "resources": [
+    {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},"order":0,},
+    {"id":{"name":"spr_tileset1","path":"sprites/spr_tileset1/spr_tileset1.yy",},"order":5,},
     {"id":{"name":"spr_timeop_jump","path":"sprites/spr_timeop_jump/spr_timeop_jump.yy",},"order":3,},
     {"id":{"name":"spr_timeop_fall","path":"sprites/spr_timeop_fall/spr_timeop_fall.yy",},"order":4,},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":0,},
