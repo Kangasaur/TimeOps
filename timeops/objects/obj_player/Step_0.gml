@@ -37,12 +37,22 @@ if(y >= room_height && y_speed > 0)
 
 y = y + (y_speed);
 //Animations
-if(move_dir != 0)
+if (jumping && y_speed <= 0)
+{
+	sprite_index = spr_timeop_jump;
+}
+else if (jumping && y_speed > 0)
+{
+	sprite_index = spr_timeop_fall;
+}
+else if(move_dir != 0)
 {
 	image_xscale = move_dir;
 	sprite_index = spr_timeop_walk;
+	image_speed = 1
 }
 else
 {
 	sprite_index = spr_timeop_idle;
+	image_speed = 1
 }
