@@ -37,12 +37,31 @@ if(y >= room_height && y_speed > 0)
 
 y = y + (y_speed);
 //Animations
-if(move_dir != 0)
+if (jumping && y_speed <= 0)
+{
+	sprite_index = spr_timeop_jump;
+}
+else if (jumping && y_speed > 0)
+{
+	sprite_index = spr_timeop_fall;
+}
+else if(move_dir != 0)
 {
 	image_xscale = move_dir;
 	sprite_index = spr_timeop_walk;
+	image_speed = 1
 }
 else
 {
 	sprite_index = spr_timeop_idle;
+	image_speed = 1
 }
+
+//Camera controls
+
+cam_x = camera_get_view_x(view_camera[0]);
+cam_y = camera_get_view_y(view_camera[0]);
+target_x = x - (camera_get_view_width(view_camera[0])/2) + (128 * image_xscale);
+target_y = y - 320;
+
+camera_set_view_pos(view_camera[0], (cam_x * 0.95) + (target_x * 0.05), (cam_y * 0.95) + (target_y * 0.05));
