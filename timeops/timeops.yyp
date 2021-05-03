@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"spr_timeop_jump","path":"sprites/spr_timeop_jump/spr_timeop_jump.yy",},"order":3,},
+    {"id":{"name":"spr_timeop_fall","path":"sprites/spr_timeop_fall/spr_timeop_fall.yy",},"order":4,},
     {"id":{"name":"spr_timeop_idle","path":"sprites/spr_timeop_idle/spr_timeop_idle.yy",},"order":1,},
     {"id":{"name":"spr_timeop_walk","path":"sprites/spr_timeop_walk/spr_timeop_walk.yy",},"order":2,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
