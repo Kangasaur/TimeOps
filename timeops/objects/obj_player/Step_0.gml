@@ -1,5 +1,9 @@
 /// @description Handles character actions and movement
 
+//Global variables so everyone can keep track of the player
+global.player_x = x;
+global.player_y = y;
+
 //Movement
 //Input
 move_dir = 0;
@@ -28,14 +32,15 @@ if(y_speed > terminal_velocity)
 {
 	y_speed = terminal_velocity;
 }
-if(y >= room_height && y_speed > 0)
+if(y >= room_height - ground_height && y_speed > 0)
 {
-	y = room_height;
+	y = room_height - ground_height;
 	y_speed = 0;
 	jumping = false;
 }
 
 y = y + (y_speed);
+
 //Animations
 if (jumping && y_speed <= 0)
 {
