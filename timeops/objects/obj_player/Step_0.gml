@@ -25,27 +25,39 @@ if(keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_space))
 }
 
 //Moves the Player
-x = x + (move_dir * move_speed);
 
 y_speed += player_gravity;
 if(y_speed > terminal_velocity)
 {
 	y_speed = terminal_velocity;
 }
-if(y >= room_height - ground_height && y_speed > 0)
+
+
+for (var i = 0; i < abs(round(move_dir * move_speed)); i++)
 {
-	y = room_height - ground_height;
-	y_speed = 0;
-	if (falling)
-	{
-		jumping = false;
-		falling = false;
-		image_index = 0;
-		image_speed = 1;
-	}
+	if (instance_place(x+move_dir, y, obj_wall)) break;
+	else x += move_dir; //move forward one pixel at a time
 }
 
-y = y + (y_speed);
+//Checking downward collisions
+for (var i = 0; i < abs(round(y_speed)); i++)
+{
+	var collision = instance_place(x, y + sign(y_speed), obj_wall);
+		
+	if (collision != noone && !place_meeting(x, y, collision)) //if so, and you aren't currently colliding with it
+	{
+		y_speed = 0;
+		if (falling)
+		{
+			jumping = false;
+			falling = false;
+			image_index = 0;
+			image_speed = 1;
+		}
+		break; //break out of the for loop
+	}
+	y += sign(y_speed); //again move forward one pixel at a time
+}
 
 //Animations
 if (jumping && y_speed <= 0)
