@@ -17,7 +17,7 @@ if(keyboard_check(ord("D")))
 }
 if(keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_space))
 {
-	if(jumping == false)
+	if(!jumping)
 	{
 		jumping = true;
 		y_speed = -jump_force;
@@ -25,21 +25,39 @@ if(keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_space))
 }
 
 //Moves the Player
-x = x + (move_dir * move_speed);
 
 y_speed += player_gravity;
 if(y_speed > terminal_velocity)
 {
 	y_speed = terminal_velocity;
 }
-if(y >= room_height - ground_height && y_speed > 0)
+
+
+for (var i = 0; i < abs(round(move_dir * move_speed)); i++)
 {
-	y = room_height - ground_height;
-	y_speed = 0;
-	jumping = false;
+	if (instance_place(x+move_dir, y, obj_wall)) break;
+	else x += move_dir; //move forward one pixel at a time
 }
 
-y = y + (y_speed);
+//Checking downward collisions
+for (var i = 0; i < abs(round(y_speed)); i++)
+{
+	var collision = instance_place(x, y + sign(y_speed), obj_wall);
+		
+	if (collision != noone && !place_meeting(x, y, collision)) //if so, and you aren't currently colliding with it
+	{
+		y_speed = 0;
+		if (falling)
+		{
+			jumping = false;
+			falling = false;
+			image_index = 0;
+			image_speed = 1;
+		}
+		break; //break out of the for loop
+	}
+	y += sign(y_speed); //again move forward one pixel at a time
+}
 
 //Animations
 if (jumping && y_speed <= 0)
@@ -49,24 +67,28 @@ if (jumping && y_speed <= 0)
 else if (jumping && y_speed > 0)
 {
 	sprite_index = spr_timeop_fall;
+	if (!falling)
+	{
+		image_index = 0;
+		image_speed = 1;
+		falling = true;
+	}
 }
 else if(move_dir != 0)
 {
 	image_xscale = move_dir;
 	sprite_index = spr_timeop_walk;
-	image_speed = 1
 }
 else
 {
 	sprite_index = spr_timeop_idle;
-	image_speed = 1
 }
 
 //Camera controls
 
 cam_x = camera_get_view_x(view_camera[0]);
 cam_y = camera_get_view_y(view_camera[0]);
-target_x = x - (camera_get_view_width(view_camera[0])/2) + (128 * image_xscale);
+target_x = x - (camera_get_view_width(view_camera[0])/2);
 target_y = y - 320;
 
 camera_set_view_pos(view_camera[0], (cam_x * 0.95) + (target_x * 0.05), (cam_y * 0.95) + (target_y * 0.05));
