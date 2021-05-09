@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "past",
+    "path": "folders/Sprites/past.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_edge_tiles",

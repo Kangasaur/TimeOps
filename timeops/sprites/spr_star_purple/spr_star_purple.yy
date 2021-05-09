@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"786748ec-70f4-430b-a097-98326d2e657f","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "future",
+    "path": "folders/Sprites/future.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_star_purple",

@@ -3,6 +3,8 @@
 y_speed = 0;
 jumping = false;
 falling = false;
+travelling = false;
+travel_time = 0;
 
 cam_x = 0;
 cam_y = 0;
