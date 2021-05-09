@@ -5,12 +5,21 @@
 //Input
 move_dir = 0;
 
+//Time travel
 if ((!jumping && keyboard_check(ord("F")) || travel_time >= 180))
 {
-	travelling = true;
-	travel_time++;
-	if (travel_time == 180) instance_create_depth(x, y+16, -500, obj_travel_flash);
-	else if (travel_time == 220) room_goto(global.room_pairs[?room]);
+	if (!place_meeting(x, y, obj_time_wall))
+	{
+		travelling = true;
+		travel_time++;
+		if (travel_time == 180) instance_create_depth(x, y+16, -500, obj_travel_flash);
+		else if (travel_time == 220) room_goto(global.room_pairs[?room]);
+	}
+	else
+	{
+		//UI Message
+		//"Current location obstructed in destination time"
+	}
 }
 else
 {
