@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c515911f-78f2-4aaa-af2e-913e95ea6c90","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "future",
+    "path": "folders/Sprites/future.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_sun",

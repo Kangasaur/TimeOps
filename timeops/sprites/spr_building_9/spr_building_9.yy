@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4f7f0251-7bbe-4e7e-b8b6-6c8d8009653b","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "buildings",
+    "path": "folders/Sprites/future/buildings.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_building_9",

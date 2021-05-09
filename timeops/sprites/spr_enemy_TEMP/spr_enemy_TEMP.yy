@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "temp and invisible",
+    "path": "folders/Sprites/temp and invisible.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_enemy_TEMP",

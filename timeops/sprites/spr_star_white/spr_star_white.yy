@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"601a31a9-caa3-483e-86d9-f904d45487ed","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "future",
+    "path": "folders/Sprites/future.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_star_white",
