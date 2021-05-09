@@ -35,7 +35,7 @@
     "spriteId": {"name":"spr_timeop_jump","path":"sprites/spr_timeop_jump/spr_timeop_jump.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 15.0,
+    "playbackSpeed": 10.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,

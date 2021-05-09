@@ -1,18 +1,16 @@
 /// @description Handles character actions and movement
 
-//Global variables so everyone can keep track of the player
-global.player_x = x;
-global.player_y = y;
-
 //Movement
 
 //Input
 move_dir = 0;
 
-if (!jumping && keyboard_check(ord("F")))
+if ((!jumping && keyboard_check(ord("F")) || travel_time >= 180))
 {
 	travelling = true;
 	travel_time++;
+	if (travel_time == 180) instance_create_depth(x, y+16, -500, obj_travel_flash);
+	else if (travel_time == 220) room_goto(global.room_pairs[?room]);
 }
 else
 {
@@ -85,10 +83,12 @@ if (travelling)
 else if (jumping && y_speed <= 0)
 {
 	sprite_index = spr_timeop_jump;
+	if (move_dir != 0) image_xscale = move_dir;
 }
 else if (jumping && y_speed > 0)
 {
 	sprite_index = spr_timeop_fall;
+	if (move_dir != 0) image_xscale = move_dir;
 	if (!falling)
 	{
 		image_index = 0;
@@ -114,3 +114,7 @@ target_x = x - (camera_get_view_width(view_camera[0])/2);
 target_y = y - 320;
 
 camera_set_view_pos(view_camera[0], (cam_x * 0.95) + (target_x * 0.05), (cam_y * 0.95) + (target_y * 0.05));
+
+//Global variables so everyone can keep track of the player
+global.player_x = x;
+global.player_y = y;
