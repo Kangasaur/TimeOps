@@ -19,6 +19,9 @@ falling = false;
 travelling = false;
 travel_time = 0;
 
+gun = instance_create_depth(x, y-23, -10, obj_gun_past);
+shot_angle = 0;
+
 cam_x = 0;
 cam_y = 0;
 target_x = 0;

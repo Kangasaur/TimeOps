@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 9,
+  "bbox_right": 3,
   "bbox_top": 0,
-  "bbox_bottom": 9,
+  "bbox_bottom": 3,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 10,
-  "height": 10,
+  "width": 4,
+  "height": 4,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6c3e7e97-996b-41d5-816f-792e525a3a65","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "future",
     "path": "folders/Sprites/future.yy",
