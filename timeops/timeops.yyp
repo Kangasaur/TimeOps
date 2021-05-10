@@ -71,6 +71,7 @@
     {"id":{"name":"spr_timeop_idle","path":"sprites/spr_timeop_idle/spr_timeop_idle.yy",},"order":1,},
     {"id":{"name":"spr_building_12","path":"sprites/spr_building_12/spr_building_12.yy",},"order":3,},
     {"id":{"name":"spr_instruction_1","path":"sprites/spr_instruction_1/spr_instruction_1.yy",},"order":7,},
+    {"id":{"name":"obj_game_over","path":"objects/obj_game_over/obj_game_over.yy",},"order":18,},
     {"id":{"name":"spr_building_10","path":"sprites/spr_building_10/spr_building_10.yy",},"order":1,},
     {"id":{"name":"Start_Future","path":"rooms/Start_Future/Start_Future.yy",},"order":2,},
     {"id":{"name":"spr_building_2","path":"sprites/spr_building_2/spr_building_2.yy",},"order":5,},
@@ -101,13 +102,7 @@
     "name": "Default",
     "children": [],
   },
-  "RoomOrderNodes": [
-    {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
-    {"roomId":{"name":"Outside_Future","path":"rooms/Outside_Future/Outside_Future.yy",},},
-    {"roomId":{"name":"Start_Future","path":"rooms/Start_Future/Start_Future.yy",},},
-    {"roomId":{"name":"Start_Past","path":"rooms/Start_Past/Start_Past.yy",},},
-    {"roomId":{"name":"Gameover","path":"rooms/Gameover/Gameover.yy",},},
-  ],
+  "RoomOrder": [],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Tile Sets.yy","order":1,"resourceVersion":"1.0","name":"Tile Sets","tags":[],"resourceType":"GMFolder",},
@@ -140,16 +135,16 @@
     {"folderPath":"folders/Sprites/weapons.yy","order":23,"resourceVersion":"1.0","name":"weapons","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
-    {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
+    {"targets":-1,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
   ],
   "TextureGroups": [
-    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
+    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"targets":-1,"resourceVersion":"1.0","name":"Default","resourceType":"GMTextureGroup",},
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.2.560",
+    "IDEVersion": "2.3.0.529",
   },
-  "resourceVersion": "1.4",
+  "resourceVersion": "1.3",
   "name": "timeops",
   "tags": [],
   "resourceType": "GMProject",
