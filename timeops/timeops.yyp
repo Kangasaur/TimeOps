@@ -13,6 +13,7 @@
     {"id":{"name":"spr_barricade","path":"sprites/spr_barricade/spr_barricade.yy",},"order":2,},
     {"id":{"name":"spr_instruction_2","path":"sprites/spr_instruction_2/spr_instruction_2.yy",},"order":8,},
     {"id":{"name":"obj_sun","path":"objects/obj_sun/obj_sun.yy",},"order":5,},
+    {"id":{"name":"spr_instruction_3","path":"sprites/spr_instruction_3/spr_instruction_3.yy",},"order":11,},
     {"id":{"name":"Outside_Future","path":"rooms/Outside_Future/Outside_Future.yy",},"order":1,},
     {"id":{"name":"spr_building_3","path":"sprites/spr_building_3/spr_building_3.yy",},"order":6,},
     {"id":{"name":"spr_building_14","path":"sprites/spr_building_14/spr_building_14.yy",},"order":14,},
