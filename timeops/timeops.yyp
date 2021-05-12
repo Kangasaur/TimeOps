@@ -60,6 +60,7 @@
     {"id":{"name":"shadow_tiles","path":"tilesets/shadow_tiles/shadow_tiles.yy",},"order":2,},
     {"id":{"name":"spr_future_bullet","path":"sprites/spr_future_bullet/spr_future_bullet.yy",},"order":3,},
     {"id":{"name":"spr_enemy","path":"sprites/spr_enemy/spr_enemy.yy",},"order":22,},
+    {"id":{"name":"obj_alien_pistol","path":"objects/obj_alien_pistol/obj_alien_pistol.yy",},"order":3,},
     {"id":{"name":"spr_future_props","path":"sprites/spr_future_props/spr_future_props.yy",},"order":11,},
     {"id":{"name":"Future_TileSet","path":"tilesets/Future_TileSet/Future_TileSet.yy",},"order":4,},
     {"id":{"name":"spr_foreground","path":"sprites/spr_foreground/spr_foreground.yy",},"order":8,},
