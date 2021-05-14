@@ -27,3 +27,6 @@ cam_y = 0;
 target_x = 0;
 target_y = 0;
 camera_set_view_pos(view_camera[0], x - (camera_get_view_width(view_camera[0])/2), y - 320);
+
+global.player_max_health = 10;
+global.player_health = 5;
