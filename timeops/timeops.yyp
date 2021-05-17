@@ -179,8 +179,16 @@
     "name": "Default",
     "children": [],
   },
-  "RoomOrder": [
-    {"name":"End_UI","path":"rooms/End_UI/End_UI.yy",},
+  "RoomOrderNodes": [
+    {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
+    {"roomId":{"name":"End_UI","path":"rooms/End_UI/End_UI.yy",},},
+    {"roomId":{"name":"Outside_Past","path":"rooms/Outside_Past/Outside_Past.yy",},},
+    {"roomId":{"name":"Gameover","path":"rooms/Gameover/Gameover.yy",},},
+    {"roomId":{"name":"Menu_start","path":"rooms/Menu_start/Menu_start.yy",},},
+    {"roomId":{"name":"Outside_Future","path":"rooms/Outside_Future/Outside_Future.yy",},},
+    {"roomId":{"name":"Start_Future","path":"rooms/Start_Future/Start_Future.yy",},},
+    {"roomId":{"name":"Alien_Ship_Concept","path":"rooms/Alien_Ship_Concept/Alien_Ship_Concept.yy",},},
+    {"roomId":{"name":"Start_Past","path":"rooms/Start_Past/Start_Past.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -216,16 +224,16 @@
     {"folderPath":"folders/Sprites/future/Alien_Artifacts.yy","order":13,"resourceVersion":"1.0","name":"Alien_Artifacts","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
-    {"targets":-1,"resourceVersion":"1.0","name":"audiogroup_default","resourceType":"GMAudioGroup",},
+    {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
   ],
   "TextureGroups": [
-    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"targets":-1,"resourceVersion":"1.0","name":"Default","resourceType":"GMTextureGroup",},
+    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.0.529",
+    "IDEVersion": "2.3.2.560",
   },
-  "resourceVersion": "1.3",
+  "resourceVersion": "1.4",
   "name": "timeops",
   "tags": [],
   "resourceType": "GMProject",
