@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"6693b1b6-daf2-4055-9836-128d2613eb0c","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Alien_Artifacts",
     "path": "folders/Sprites/future/Alien_Artifacts.yy",

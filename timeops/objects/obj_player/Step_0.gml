@@ -41,19 +41,30 @@ if (!travelling)
 	{
 		move_dir = 1;
 	}
-	if(keyboard_check_pressed(ord("W")))
+	if((keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_space)) && !jumping)
 	{
-		if(!jumping)
+		jumping = true;
+		y_speed = -jump_force;
+		image_speed = 1;
+		image_index = 0;
+	}
+	if (!jumping && keyboard_check(ord("S")))
+	{
+		if (!crouching)
 		{
-			jumping = true;
-			y_speed = -jump_force;
+			crouching = true;
+			crouch_start = true;
 		}
 	}
+	else crouching = false;
 	if (mouse_check_button_pressed(mb_left))
 	{
-		var bullet = instance_create_depth(x + (move_dir * move_speed), y - 23, -100, obj_past_bullet);
-		bullet.image_angle = shot_angle;
-		bullet.direction = shot_angle;
+		var create_height;
+		if (crouching) create_height = y - 10;
+		else create_height = y - 18;
+		var bullet = instance_create_depth(x + (move_dir * move_speed), create_height, -100, obj_past_bullet);
+		bullet.image_angle = shot_angle + random_range(-6, 6);
+		bullet.direction = bullet.image_angle;
 		bullet.speed = 10;
 	}
 }
@@ -67,8 +78,15 @@ if(y_speed > terminal_velocity)
 }
 
 //Collision check and movement
-
-for (var i = 0; i < abs(round(move_dir * move_speed)); i++)
+if (crouching) x_speed = crawl_speed;
+else x_speed = move_speed;
+remainder += x_speed - floor(x_speed);
+if (remainder > 1)
+{
+	x_speed += 1;
+	remainder -= 1;
+}
+for (var i = 0; i < floor(abs(move_dir * x_speed)); i++)
 {
 	if (instance_place(x+move_dir, y, obj_wall)) break;
 	else x += move_dir;
@@ -120,11 +138,22 @@ else if (jumping && y_speed > 0)
 else if(move_dir != 0)
 {
 	image_xscale = move_dir;
-	sprite_index = spr_timeop_walk;
+	if (crouch_start) sprite_index = spr_timeop_crouch;
+	else if (crouching)
+	{
+		image_speed = 1;
+		sprite_index = spr_timeop_crawl;
+	}
+	else
+	{
+		image_speed = 1;
+		sprite_index = spr_timeop_walk;
+	}
 }
 else
 {
-	sprite_index = spr_timeop_idle;
+	if (crouching) sprite_index = spr_timeop_crouch;
+	else sprite_index = spr_timeop_idle;
 }
 
 
@@ -132,8 +161,16 @@ if (image_xscale = 1) gun.image_angle = shot_angle;
 else gun.image_angle = 90 - (shot_angle - 90);
 if (gun.image_angle > 180) gun.image_angle = clamp(gun.image_angle, 280, 360);
 else gun.image_angle = clamp(gun.image_angle, 0, 80);
-gun.x = x;
-gun.y = y-23;
+if (crouching)
+{
+	gun.x = x + (4 * image_xscale);
+	gun.y = y - 10;
+}
+else
+{
+	gun.x = x + (2 * image_xscale);
+	gun.y = y - 18;
+}
 
 gun.image_angle *= image_xscale;
 gun.image_xscale = image_xscale;

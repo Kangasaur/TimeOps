@@ -14,8 +14,8 @@
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 34,
-  "height": 34,
+  "width": 64,
+  "height": 64,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"a221597e-0002-4b99-b05b-455b25a97b81","path":"sprites/spr_Tratoglax/spr_Tratoglax.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a221597e-0002-4b99-b05b-455b25a97b81","path":"sprites/spr_Tratoglax/spr_Tratoglax.yy",},"LayerId":{"name":"98c7314d-0737-4fdb-86ba-7f12428a0076","path":"sprites/spr_Tratoglax/spr_Tratoglax.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_Tratoglax","path":"sprites/spr_Tratoglax/spr_Tratoglax.yy",},"resourceVersion":"1.0","name":"a221597e-0002-4b99-b05b-455b25a97b81","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"050b4251-a0f5-454e-b73d-e7ce7b16a235","path":"sprites/spr_knife_slash/spr_knife_slash.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"050b4251-a0f5-454e-b73d-e7ce7b16a235","path":"sprites/spr_knife_slash/spr_knife_slash.yy",},"LayerId":{"name":"94e8d653-fb9a-4e6b-8af9-4aa0ddc07ed5","path":"sprites/spr_knife_slash/spr_knife_slash.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_knife_slash","path":"sprites/spr_knife_slash/spr_knife_slash.yy",},"resourceVersion":"1.0","name":"050b4251-a0f5-454e-b73d-e7ce7b16a235","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_Tratoglax","path":"sprites/spr_Tratoglax/spr_Tratoglax.yy",},
+    "spriteId": {"name":"spr_knife_slash","path":"sprites/spr_knife_slash/spr_knife_slash.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"c35a4f70-3144-48d7-a614-2abe870d4977","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a221597e-0002-4b99-b05b-455b25a97b81","path":"sprites/spr_Tratoglax/spr_Tratoglax.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"968993f1-f1c7-413a-89bc-a1915082d8f0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"050b4251-a0f5-454e-b73d-e7ce7b16a235","path":"sprites/spr_knife_slash/spr_knife_slash.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_Tratoglax","path":"sprites/spr_Tratoglax/spr_Tratoglax.yy",},
+    "parent": {"name":"spr_knife_slash","path":"sprites/spr_knife_slash/spr_knife_slash.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_Tratoglax",
+    "name": "spr_knife_slash",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"98c7314d-0737-4fdb-86ba-7f12428a0076","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"94e8d653-fb9a-4e6b-8af9-4aa0ddc07ed5","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Alien_Artifacts",
-    "path": "folders/Sprites/future/Alien_Artifacts.yy",
+    "name": "weapons",
+    "path": "folders/Sprites/weapons.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_Tratoglax",
+  "name": "spr_knife_slash",
   "tags": [],
   "resourceType": "GMSprite",
 }

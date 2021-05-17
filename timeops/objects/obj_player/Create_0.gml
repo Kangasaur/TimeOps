@@ -14,12 +14,16 @@ else
 }
 
 y_speed = 0;
+x_speed = 0;
+remainder = 0;
 jumping = false;
 falling = false;
 travelling = false;
 travel_time = 0;
+crouching = false;
+crouch_start = false;
 
-gun = instance_create_depth(x, y-23, -10, obj_gun_past);
+gun = instance_create_depth(x, y-18, -10, obj_gun_past);
 shot_angle = 0;
 
 cam_x = 0;
