@@ -63,6 +63,15 @@ if (!travelling)
 		dodge_x = x + (dodge_distance * image_xscale);
 		image_index = 0;
 	}
+	if (!knifing && mouse_check_button_pressed(mb_right))
+	{
+		var create_height;
+		if (crouching) create_height = y - 10;
+		else create_height = y - 18;
+		knifing = true;
+		knife = instance_create_depth(x + (move_dir * move_speed), create_height, -100, obj_knife);
+		knife.image_angle = shot_angle;
+	}
 	if (mouse_check_button_pressed(mb_left))
 	{
 		var create_height;
@@ -197,6 +206,28 @@ else
 
 gun.image_angle *= image_xscale;
 gun.image_xscale = image_xscale;
+
+if (knife != 0)
+{
+	gun.visible = false;
+	if (crouching)
+	{
+		knife.x = x + (4 * image_xscale);
+		knife.y = y - 10;
+	}
+	else
+	{
+		knife.x = x + (2 * image_xscale);
+		knife.y = y - 18;
+	}
+	if (knife.image_index == 4)
+	{
+		instance_destroy(knife);
+		knife = 0;
+		knifing = false;
+		gun.visible = true;
+	}
+}
 
 //Camera controls
 

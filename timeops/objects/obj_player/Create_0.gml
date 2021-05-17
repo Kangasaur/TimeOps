@@ -24,8 +24,10 @@ crouching = false;
 crouch_start = false;
 dodging = false;
 dodge_x = 0;
+knifing = false;
 
 gun = instance_create_depth(x, y-18, -10, obj_gun_past);
+knife = 0;
 shot_angle = 0;
 
 cam_x = 0;

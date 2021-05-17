@@ -90,6 +90,7 @@
     {"id":{"name":"obj_alien_pistol","path":"objects/obj_alien_pistol/obj_alien_pistol.yy",},"order":3,},
     {"id":{"name":"spr_future_props","path":"sprites/spr_future_props/spr_future_props.yy",},"order":11,},
     {"id":{"name":"spr_computer","path":"sprites/spr_computer/spr_computer.yy",},"order":7,},
+    {"id":{"name":"obj_knife","path":"objects/obj_knife/obj_knife.yy",},"order":6,},
     {"id":{"name":"snd_interact","path":"sounds/snd_interact/snd_interact.yy",},"order":4,},
     {"id":{"name":"snd_alien_jump","path":"sounds/snd_alien_jump/snd_alien_jump.yy",},"order":11,},
     {"id":{"name":"Future_TileSet","path":"tilesets/Future_TileSet/Future_TileSet.yy",},"order":4,},
