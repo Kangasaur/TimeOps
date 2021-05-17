@@ -22,6 +22,8 @@ travelling = false;
 travel_time = 0;
 crouching = false;
 crouch_start = false;
+dodging = false;
+dodge_x = 0;
 
 gun = instance_create_depth(x, y-18, -10, obj_gun_past);
 shot_angle = 0;

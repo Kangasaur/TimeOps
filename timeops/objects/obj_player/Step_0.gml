@@ -33,15 +33,15 @@ else
 
 if (!travelling)
 {
-	if(keyboard_check(ord("A")))
+	if(!dodging && keyboard_check(ord("A")))
 	{
 		move_dir = -1;
 	}
-	if(keyboard_check(ord("D")))
+	if(!dodging && keyboard_check(ord("D")))
 	{
 		move_dir = 1;
 	}
-	if((keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_space)) && !jumping)
+	if(!dodging && !jumping && (keyboard_check_pressed(ord("W")) || keyboard_check_pressed(vk_space)))
 	{
 		jumping = true;
 		y_speed = -jump_force;
@@ -57,6 +57,12 @@ if (!travelling)
 		}
 	}
 	else crouching = false;
+	if (!dodging && keyboard_check_pressed(vk_shift))
+	{
+		dodging = true;
+		dodge_x = x + (dodge_distance * image_xscale);
+		image_index = 0;
+	}
 	if (mouse_check_button_pressed(mb_left))
 	{
 		var create_height;
@@ -78,13 +84,21 @@ if(y_speed > terminal_velocity)
 }
 
 //Collision check and movement
-if (crouching) x_speed = crawl_speed;
-else x_speed = move_speed;
-remainder += x_speed - floor(x_speed);
-if (remainder > 1)
+if (!dodging)
 {
-	x_speed += 1;
-	remainder -= 1;
+	if (crouching) x_speed = crawl_speed;
+	else x_speed = move_speed;
+	remainder += x_speed - floor(x_speed);
+	if (remainder > 1)
+	{
+		x_speed += 1;
+		remainder -= 1;
+	}
+}
+else
+{
+	x_speed = ((x * 0.75) + (dodge_x * 0.25)) - x;
+	move_dir = image_xscale;
 }
 for (var i = 0; i < floor(abs(move_dir * x_speed)); i++)
 {
@@ -117,6 +131,11 @@ for (var i = 0; i < abs(round(y_speed)); i++)
 if (travelling)
 {
 	sprite_index = spr_timeop_travel;
+	image_speed = 1;
+}
+else if (dodging)
+{
+	sprite_index = spr_timeop_dodge;
 	image_speed = 1;
 }
 else if (jumping && y_speed <= 0)
@@ -153,7 +172,11 @@ else if(move_dir != 0)
 else
 {
 	if (crouching) sprite_index = spr_timeop_crouch;
-	else sprite_index = spr_timeop_idle;
+	else
+	{
+		image_speed = 1;
+		sprite_index = spr_timeop_idle;
+	}
 }
 
 
