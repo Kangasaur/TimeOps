@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "spr_gameover_TEMP",
-    "path": "sprites/spr_gameover_TEMP/spr_gameover_TEMP.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

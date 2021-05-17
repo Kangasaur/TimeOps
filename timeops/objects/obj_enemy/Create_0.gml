@@ -5,3 +5,4 @@ jump_after = false;
 
 shot_time = irandom_range(40, 150);
 shot_angle = 0;
+signalled = false;

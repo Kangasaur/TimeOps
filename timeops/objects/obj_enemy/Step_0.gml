@@ -21,18 +21,24 @@ for (var i = 0; i < abs(round(y_speed)); i++)
 	y += sign(y_speed);
 }
 
-//Jumping after the player
-if(global.player_y < (y - 4) && jump_after == false && y_speed == 0)
-{
-	jump_after = true;
-	alarm[0] = reaction_time * room_speed;
-}
+
 
 //Chasing the Player
 move_dir = 0;
 dist_to_player = distance_to_point(global.player_x, global.player_y);
+//Jumping after the player
+if(global.player_y < (y - 4) && jump_after == false && y_speed == 0 && dist_to_player < 384)
+{
+	jump_after = true;
+	alarm[0] = reaction_time * room_speed;
+}
 if (dist_to_player < shot_distance)
 {
+	if (!signalled)
+	{
+		audio_play_sound(choose(snd_alien_voice_1, snd_alien_voice_2), 0, 0);
+		signalled = true;
+	}
 	shot_time--;
 	image_xscale = sign(global.player_x - x);
 	shot_angle = point_direction(x, y, global.player_x, global.player_y);
@@ -42,6 +48,7 @@ if (dist_to_player < shot_distance)
 		bullet.direction = shot_angle;
 		bullet.speed = 6;
 		shot_time = irandom_range(40, 150);
+		audio_play_sound(snd_alien_pistol, 0, 0);
 	}
 }
 if(dist_to_player < chase_distance)
