@@ -15,17 +15,19 @@ if (!room_init)
 shot_angle = point_direction(gun.x, gun.y, mouse_x, mouse_y);
 
 //Time travel
-if ((!jumping && keyboard_check(ord("F")) || travel_time >= 180))
+if ((!jumping && keyboard_check(ord("F")) && !global.screen || travel_time >= 180))
 {
 	gun.visible = false;
 	if (!place_meeting(x, y, obj_time_wall))
 	{
+		global.tutorial = false;
 		if (!travelling) audio_play_sound(snd_timetravel, 0, 0);
 		travelling = true;
 		travel_time++;
 		global.travel_message = "Time travelling: " + string(floor(travel_time/2)) + "%";
 		if (audio_is_playing(snd_ambience)) audio_stop_sound(snd_ambience);
-		if (travel_time == 180) instance_create_depth(x, y+16, -500, obj_travel_flash);
+		if (travel_time == 60) screenshake = true;
+		else if (travel_time == 180) instance_create_depth(x, y+16, -500, obj_travel_flash);
 		else if (travel_time == 220)
 		{
 			room_init = false;
@@ -39,19 +41,20 @@ if ((!jumping && keyboard_check(ord("F")) || travel_time >= 180))
 	}
 	else
 	{
-		global.travel_message = "Destination obstructed in other time\nPlease time travel somewhere else"
+		global.travel_message = "Destination obstructed in other time\nTry again in different location"
 	}
 }
 else
 {
 	gun.visible = true;
+	screenshake = false;
 	travelling = false;
 	travel_time = 0;
 	global.travel_message = "";
 	if (audio_is_playing(snd_timetravel)) audio_stop_sound(snd_timetravel);
 }
 
-if (!travelling)
+if (!travelling && !global.screen)
 {
 	if(!dodging && keyboard_check(ord("A")))
 	{
@@ -94,7 +97,7 @@ if (!travelling)
 		knife.image_angle = shot_angle;
 		audio_play_sound(snd_knife, 0, 0);
 	}
-	if (mouse_check_button_pressed(mb_left))
+	if (mouse_check_button_pressed(mb_left) && global.player_ammo > 0)
 	{
 		var create_height;
 		if (crouching) create_height = y - 10;
@@ -103,6 +106,7 @@ if (!travelling)
 		bullet.image_angle = shot_angle + random_range(-6, 6);
 		bullet.direction = bullet.image_angle;
 		bullet.speed = 10;
+		global.player_ammo--;
 		audio_play_sound(snd_pistol, 0, 0);
 	}
 }
@@ -156,6 +160,7 @@ for (var i = 0; i < abs(round(y_speed)); i++)
 		}
 		break;
 	}
+	else if (place_meeting(x, y, collision)) show_debug_message("this shouldn't happen");
 	y += sign(y_speed);
 }
 
@@ -176,6 +181,22 @@ else if (place_meeting(x, y, obj_entrance))
 	global.player_x = 1344;
 	if (room == Outside_Past) room_goto(Start_Past);
 	else room_goto(Start_Future);
+}
+else if (place_meeting(x, y, obj_healthpack) && !travelling)
+{
+	global.travel_message = "E to pick up";
+	if (keyboard_check_pressed(ord("E")))
+	{
+		global.player_health += 2;
+		if (global.player_health > global.player_max_health) global.player_health = global.player_max_health;
+		global.player_ammo = 20;
+		instance_destroy(instance_place(x, y, obj_healthpack));
+	}
+}
+else if (place_meeting(x, y, obj_computer) && !global.screen && !travelling)
+{
+	global.travel_message = "E to interact";
+	if (keyboard_check_pressed(ord("E"))) alarm[0] = 1;
 }
 
 //Animations
@@ -281,4 +302,4 @@ target_y = y - 320;
 target_x = clamp(target_x, 0, room_width - camera_get_view_width(view_camera[0]));
 
 camera_set_view_pos(view_camera[0], (cam_x * 0.95) + (target_x * 0.05), (cam_y * 0.95) + (target_y * 0.05));
-if (travelling) camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + random_range(-2, 2), camera_get_view_y(view_camera[0]) + random_range(-2, 2));
+if (screenshake) camera_set_view_pos(view_camera[0], camera_get_view_x(view_camera[0]) + random_range(-2, 2), camera_get_view_y(view_camera[0]) + random_range(-2, 2));

@@ -12,7 +12,6 @@ else
 	x = global.player_x;
 	y = global.player_y;
 }
-global.travel_message = false;
 y_speed = 0;
 x_speed = 0;
 remainder = 0;
@@ -26,6 +25,7 @@ dodging = false;
 dodge_x = 0;
 knifing = false;
 room_init = true;
+screenshake = false;
 
 gun = instance_create_depth(x, y-18, -10, obj_gun_past);
 knife = 0;
